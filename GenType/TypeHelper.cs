@@ -46,8 +46,9 @@ namespace GenType
             {
                 return null;
             }
-            var parseMethod = type.GetMethods().Where(x => x.Name == "Parse" && x.GetParameters().Count() == 1).First();
-            return FunctionTypeConverter<string>(parseMethod);
+            var parseMethod = type.GetMethods().Where(x => x.Name == "Parse" && x.GetParameters().Count() == 1).FirstOrDefault();
+            
+            return parseMethod == null ? null : FunctionTypeConverter<string>(parseMethod);
         }
 
 

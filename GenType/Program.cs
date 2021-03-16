@@ -65,7 +65,7 @@ namespace GenType
         {
             try
             {
-                var parse1 = TypeHelper.GetParser<int>("double");
+                var parse1 = TypeHelper.GetParser("double");
                 var res = parse1.Invoke("12345.4");
                 Console.WriteLine();
                 //var method = typeof(Cast).GetMethod("To").MakeGenericMethod(t1);
